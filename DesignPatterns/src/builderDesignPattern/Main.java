@@ -3,13 +3,15 @@ package builderDesignPattern;
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-		User user = new User.UserBuilder()
-				.setEmailId("dev@dev.com")
-				.setUserId("1")
-				.setUserName("Developer")
-				.build();
+		
+		//User user =  new User.UserBuilder().setUserid("1").setUserName("Vaibhav").setUserNumber("1234").build();
+		//System.out.println(user);
+		
+//		User user2 =  new User.UserBuilder().setUserid("2").setUserName("Megha").setUserNumber("5678").build();
+	//	System.out.println(user2);
+		
+		User.UserBuilder.building().setUserid("1").setUserName("Vaibhav").setUserNumber("1234").build();
 	}
+	
 
 }

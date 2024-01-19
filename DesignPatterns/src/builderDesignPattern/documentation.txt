@@ -1,0 +1,27 @@
+Builder Design pattern:
+	In this pattern we create object step by step and finally return final object with 
+	desired values of attributes.
+	We will use Builder class to create properties of main class step by step and 
+	then finally we will create build method.
+	We will create class User.
+	User Class details: -
+		properties final userId, userName, address, emailId
+		private constructor User();
+		we will not create setter only getter will be created
+		Inner class details: -
+			we will create static inner class (User Builder) with same properties  to 
+			create object.
+			we will create setters, public constructor.
+			need to return object of class from each setter method.
+			then we need to create build method which will build our main class object 
+			and return it, we will pass object to inner class.			
+		In final constructor of class we need to get inner class object n using that 
+		we will assign values.
+			
+		There is another approach if we do not want to use new keyword then we can 
+		make constructor of inner class public and we can create another static method 
+		which will create new inner class object.  
+		
+	now in calling class we will use parent class to call inner class Constructor and 
+	create properties
+	

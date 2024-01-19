@@ -1,56 +1,68 @@
 package builderDesignPattern;
 
 public class User {
-	private final String userId;
+	private final String userid;
 	private final String userName;
-	private final String emailId;
+	private final String userNumber;
 	
-	private User(UserBuilder userbuilder) {
-		//initialize
-		this.userId = userbuilder.userId;
-		this.userName = userbuilder.userName;
-		this.emailId = userbuilder.emailId;
+	private User(UserBuilder userBuilder) {
+		this.userid = userBuilder.userid;
+		this.userName = userBuilder.userName;
+		this.userNumber = userBuilder.userNumber;
+	}
+	
+
+	@Override
+	public String toString() {
+		return "User [userid=" + userid + ", userName=" + userName + ", userNumber=" + userNumber + "]";
 	}
 
-	public String getUserId() {
-		return userId;
+
+	public String getUserid() {
+		return userid;
 	}
 
 	public String getUserName() {
 		return userName;
 	}
 
-	public String getEmailId() {
-		return emailId;
+	public String getUserNumber() {
+		return userNumber;
 	}
 	
-	//inner class to create  object
 	static class UserBuilder{
-		private String userId;
-		private String userName;
-		private String emailId;
+		private  String userid;
+		private  String userName;
+		private  String userNumber;
 		
-		public UserBuilder() {
+		private UserBuilder() {
 			
 		}
 		
-		public UserBuilder setUserId(String userId) {
-			this.userId = userId;
+		public static UserBuilder building() {
+			return new UserBuilder();
+		}
+		
+		public UserBuilder setUserid(String userid) {
+			this.userid = userid;
 			return this;
 		}
 		public UserBuilder setUserName(String userName) {
 			this.userName = userName;
 			return this;
 		}
-		public UserBuilder setEmailId(String emailId) {
-			this.emailId = emailId;
+		public UserBuilder setUserNumber(String userNumber) {
+			this.userNumber = userNumber;
 			return this;
 		}
-		
 		public User build() {
 			User user = new User(this);
 			return user;
 		}
 		
 	}
+	
+	
+	
+
 }

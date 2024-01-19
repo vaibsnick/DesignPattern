@@ -10,7 +10,8 @@ public class Main {
 //		User user2 =  new User.UserBuilder().setUserid("2").setUserName("Megha").setUserNumber("5678").build();
 	//	System.out.println(user2);
 		
-		User.UserBuilder.building().setUserid("1").setUserName("Vaibhav").setUserNumber("1234").build();
+		User user =   User.UserBuilder.building().setUserid("1").setUserName("Vaibhav").setUserNumber("1234").build();
+		System.out.println(user);
 	}
 	
 
